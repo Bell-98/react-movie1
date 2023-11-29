@@ -2,11 +2,11 @@ import Movie from "./Movie";
 import MovieItem from "./MovieItem";
 
 
-const MovieList = ({data,onDel,onEdit,changeInput }) => { 
+const MovieList = ({data,onDel,onEdit,align,  }) => { 
   const {genre,title,maincharacter,releasedate} =data
     return (
         <div className='MovieList'>
-             <select onChange={changeInput}>
+             <select onChange={align}>
                 <option value="">==정렬==</option>
                 <option value="genre">장르 </option>
                 <option value="title">제목 </option>  
@@ -34,7 +34,7 @@ const MovieList = ({data,onDel,onEdit,changeInput }) => {
                {/*  {
                   data.map( item=> <MovieItem key={item.id} item={item} />)
                 } */}
-                {data.map(item => <MovieItem key={item.id} item={item} onDel={onDel} onEdit={onEdit} />)}
+                {data.map(item => <MovieItem key={item.id} item={item} onDel={onDel} onEdit={onEdit} align={align}  />)}
               </tbody>
              
               
